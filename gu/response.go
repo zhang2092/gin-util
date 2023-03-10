@@ -27,6 +27,10 @@ func Failed(ctx *gin.Context, message string) {
 	ResponseJson(ctx, http.StatusInternalServerError, message, nil)
 }
 
+func FailedWithCode(ctx *gin.Context, code int, message string) {
+	ResponseJson(ctx, code, message, nil)
+}
+
 func ResponseJson(ctx *gin.Context, code int, message string, data any) {
 	ctx.JSON(code, response{
 		Code:    code,
