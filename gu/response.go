@@ -13,10 +13,10 @@ type response struct {
 }
 
 type PageData struct {
-	Total    int `json:"total"`
-	PageID   int `json:"page_id"`
-	PageSize int `json:"page_size"`
-	Result   any `json:"result"`
+	Total    int64 `json:"total"`
+	PageID   int64 `json:"page_id"`
+	PageSize int64 `json:"page_size"`
+	Result   any   `json:"result"`
 }
 
 func Ok(ctx *gin.Context, data any) {
